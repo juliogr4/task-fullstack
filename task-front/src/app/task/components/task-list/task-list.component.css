@@ -1,0 +1,40 @@
+/* ===== TASK LIST ===== */
+.tasks {
+  margin-block: 1.5rem;
+  text-align: center;
+}
+
+.task__link {
+  align-items: center;
+  border: var(--border);
+  display: flex;
+  justify-content: space-between;
+  margin-block: 1rem;
+}
+
+.task__link--inactive { border: 1px solid var(--red-color) }
+
+.task__name {
+  font-size: 1rem;
+  max-width: 490px;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task__container { height: 100%; }
+
+/* ===== NO TASKS ===== */
+.no-data {
+  align-items: center;
+  display: flex;
+  height: 80%;
+  justify-content: center;
+}
+
+.no-data__text {
+  color: var(--light-color);
+  font-size: 2rem;
+  text-align: center;
+}

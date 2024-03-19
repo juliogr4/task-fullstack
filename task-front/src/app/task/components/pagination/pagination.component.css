@@ -1,0 +1,18 @@
+/* ===== PAGINATION ===== */
+.pagination {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.pagination__icon {
+  color: var(--blue-color);
+  font-size: 3.2rem;
+}
+
+.pagination__icon--disabled {
+  color: var(--light-gray-color);
+  cursor: auto;
+  pointer-events: auto;
+}

@@ -1,0 +1,56 @@
+.alert {
+  align-items: center;
+  animation: moveLeftAndRight 4s forwards;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 1rem;
+  height: 3.7rem;
+  padding: 1rem;
+  position: fixed;
+  right: .8rem;
+  top: .8rem;
+  width: 16rem;
+}
+
+
+@keyframes moveLeftAndRight {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10%);
+  }
+  75% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+.alert__success {
+  background-color: rgb(5, 195, 5);
+}
+
+.alert__error { background-color: rgba(230, 80, 80, 0.947); }
+
+.alert__icon { color: var(--white-color); }
+
+.alert__title {
+  font-weight: var(--fw-700);
+  text-transform: capitalize;
+}
+
+.alert__text {
+  font-size: .7rem;
+}
+
+.alert__close {
+  position: absolute;
+  right: .5rem;
+  top: 0;
+}
+
+.alert__icon--close {
+  font-size: 1rem;
+}

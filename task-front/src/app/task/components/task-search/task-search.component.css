@@ -1,0 +1,92 @@
+/* ===== SEARCH ===== */
+.search__field {
+  align-items: center;
+  border: var(--border);
+  display: flex;
+  justify-content: space-between;
+  margin-block-start: .5rem;
+  position: relative;
+}
+
+.search__input {
+  font-size: 1rem;
+  padding-right: 3rem;
+}
+
+.search__dialog {
+  position: absolute;
+  right: 1rem;
+}
+
+/* ===== DIALOG ===== */
+
+.dialog__form {
+  background-color: var(--white-color);
+  display: none;
+  left: 50%;
+  max-width: 20rem;
+  padding: 1rem;
+  position: fixed;
+  top: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  z-index: 2;
+}
+
+.dialog__form--open { display: block; }
+
+.dialog__option { margin-block-end: 1rem; }
+
+.dialog__text {
+  color: var(--blue-color);
+  font-size: 1rem;
+  font-weight: var(--fw-700);
+  text-decoration: underline;
+}
+
+.dialog__select {
+  align-items: center;
+  display: flex;
+  gap: .8rem;
+  margin-block: .6rem;
+  margin-inline-start: 1rem;
+}
+
+.dialog__label {
+  font-size: 1rem;
+  width: 100%;
+}
+
+.dialog__filter {
+  border: var(--border);
+  padding-block: .3rem;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.dialog__close {
+  position: absolute;
+  right: .8rem;
+  top: .8rem;
+}
+
+.dialog__close-icon { font-size: 1.5rem; }
+
+/* ===== OVERLAY ===== */
+.task__overlay {
+  background-color: #000000d0;
+  bottom: 0;
+  display: none;
+  height: 100vh;
+  left: 0;
+  pointer-events: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.task__overlay--open {
+  display: block;
+  z-index: 1;
+}

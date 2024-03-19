@@ -1,0 +1,106 @@
+
+<section class="search">
+  <form class="search__form">
+    <div class="search__field">
+      <input
+        type="search"
+        class="input__field search__input"
+        id="search" name="search"
+        placeholder="Search"
+        #searchInput
+      >
+      <button
+        type="button"
+        class="search__dialog"
+        aria-label="Open dialog"
+        (click)="toggleDialog()"
+      >
+        <i class="fa-solid fa-filter"></i>
+      </button>
+    </div>
+  </form>
+
+  <form class="dialog__form" [ngClass]="{'dialog__form--open': isDialogOpened}">
+    <div class="dialog__options">
+      <div class="dialog__option">
+        <p class="dialog__text">Sort by:</p>
+        <ul class="dialog__list">
+          <li class="dialog__item">
+            <div class="dialog__select">
+              <input
+                type="checkbox"
+                id="sort-ascending"
+                name="sort-ascending"
+                class="dialog__input"
+                [checked]="searchParameters.sortOrder === 'ascending'"
+                (change)="onSortChange('ascending')"
+              >
+              <label for="sort-ascending" class="dialog__label">Ascending</label>
+            </div>
+          </li>
+          <li class="dialog__item">
+            <div class="dialog__select">
+              <input
+                type="checkbox"
+                id="sort-descending"
+                name="sort-descending"
+                class="dialog__input"
+                [checked]="searchParameters.sortOrder === 'descending'"
+                (change)="onSortChange('descending')">
+              <label for="sort-descending" class="dialog__label">Descending</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="dialog__option">
+        <p class="dialog__text">Filter by:</p>
+        <ul class="dialog__list">
+          <li class="dialog__item">
+            <div class="dialog__select">
+              <input
+                type="checkbox"
+                id="task-active"
+                name="task-active" class="dialog__input"
+                [checked]="searchParameters.taskStatus === 'active' || searchParameters.taskStatus === ''"
+                (change)="onTaskStatusChange('active', $event.srcElement)"
+              >
+              <label for="task-active" class="dialog__label">Active Task</label>
+            </div>
+          </li>
+          <li class="dialog__item">
+            <div class="dialog__select">
+              <input
+                type="checkbox"
+                id="task-inactive"
+                name="task-inactive" class="dialog__input"
+                [checked]="searchParameters.taskStatus === 'inactive' || searchParameters.taskStatus === ''"
+                (change)="onTaskStatusChange('inactive', $event.srcElement)"
+              >
+              <label for="task-inactive" class="dialog__label">Inactive Task</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="dialog__filter"
+      aria-label="search for dialog filters"
+      (click)="onApply()">
+        apply
+    </button>
+
+    <button
+      type="button"
+      class="dialog__close"
+      aria-label="close popup"
+      (click)="toggleDialog()"
+    >
+      <i class="fa-regular fa-circle-xmark dialog__close-icon"></i>
+    </button>
+  </form>
+
+  <div class="task__overlay" [ngClass]="{ 'task__overlay--open': isDialogOpened }"></div>
+</section>

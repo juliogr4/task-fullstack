@@ -1,0 +1,46 @@
+/* ====== OVERLAY ====== */
+.loading__overlay {
+  background-color: #000000d0;
+  bottom: 0;
+  display: grid;
+  height: 100vh;
+  left: 0;
+  place-items: center;
+  pointer-events: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+/* ====== LOADING ====== */
+.loading__animation {
+  display: inline-block;
+  transform: translateZ(1px);
+}
+
+.loading__animation > div {
+  animation: loading_animation 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  background: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  height: 5rem;;
+  margin: 8px;
+  width: 5rem;
+}
+
+@keyframes loading_animation {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    transform: rotateY(1800deg);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}

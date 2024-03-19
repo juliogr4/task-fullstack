@@ -1,0 +1,32 @@
+<ng-container *ngIf="alert">
+  <div
+    class="alert"
+    [ngClass]="{
+      'alert__error': alert.status === 'error',
+      'alert__success': alert.status === 'success'
+    }"
+  >
+
+    <ng-container *ngIf="alert.status === 'error'">
+      <div class="alert__status">
+        <i class="fa-solid fa-bomb alert__icon--error"></i>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="alert.status === 'success'">
+      <div class="alert__status">
+        <i class="fa-solid fa-check alert__icon--success"></i>
+      </div>
+    </ng-container>
+
+    <div class="alert__content">
+      <p class="alert__title alert__text">{{ alert.status }}</p>
+      <p class="alert__message alert__text">{{ alert.message }}</p>
+    </div>
+
+    <button class="alert__close">
+      <i class="fa-solid fa-xmark alert__icon--close" (click)="onCloseAlert()"></i>
+    </button>
+
+  </div>
+</ng-container>

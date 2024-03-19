@@ -1,0 +1,81 @@
+.task__body {
+  align-items: center;
+  background-color: var(--blue-color);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.task__container {
+  background-color: var(--white-color);
+  border-radius: 1rem;
+  height: calc(100vh - 10vh);
+  max-width: 30rem;
+  padding: 2rem 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.task__block {
+  height: 100%;
+}
+
+.task {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}
+
+/* ===== CREATE BUTTON ===== */
+
+.task__create {
+  left: 50%;
+  margin-block-start: -2rem;
+  position: absolute;
+  top: 0%;
+  translate: -50% 0;
+  z-index: 0;
+}
+
+.task__create-icon {
+  color: var(--gray-color);
+  font-size: 4rem;
+  position: relative;
+}
+
+.task__title {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-700);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.task__create--background {
+  background-color: var(--white-color);
+  height: 50%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  width: 50%;
+}
+
+/* ===== COPYRIGHT ===== */
+.copyright {
+  align-items: center;
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+}
+
+.copyright__icon {
+  color: var(--gray-color);
+  font-size: .8rem;
+}
+
+.copyright__text {
+  font-size: .7rem;
+}
+
+

@@ -1,0 +1,23 @@
+<section class="task__body">
+  <div class="task__container">
+    <ng-container *ngIf="isHomePage">
+      <a class="task__button task__create task__button--rounded" aria-label="Create task"
+        [routerLink]="['/task-manager']">
+        <div class="task__create--background"></div>
+        <i class="fa-solid fa-circle-plus task__create-icon"></i>
+      </a>
+    </ng-container>
+    <div class="task__block">
+      <div class="task">
+        <h1 class="task__title">tasks</h1>
+        <main class="task__main">
+          <router-outlet></router-outlet>
+        </main>
+        <div class="copyright">
+          <i class="fa-solid fa-copyright copyright__icon"></i>
+          <span class="copyright__text">All rights reserved | Made by Julio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

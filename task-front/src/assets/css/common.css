@@ -1,0 +1,11 @@
+.input__field {
+  padding: .8rem 1rem;
+  width: 100%;
+  height: 100%;
+  border: var(--border);
+}
+
+.input__field::placeholder { font-size: .9rem; }
+
+/* remove the 'x' icon from the input search */
+input[type="search"]::-webkit-search-cancel-button { display: none; }

@@ -1,0 +1,47 @@
+.task-manager {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.task-manager__field { flex-grow: 1; }
+
+.task-manager__textarea {
+  line-height: 2.5rem;
+  padding: 1rem;
+  resize: none;
+}
+
+.task-manager__textarea--inactive {
+  background-color:rgb(233, 233, 233);
+  pointer-events: none;
+}
+
+.task-manager__action {
+  margin-block: 1rem;
+  text-align: center;
+}
+
+.task-manager__button {
+  border-radius: 50vw;
+  height: 3.5rem;
+  margin-inline-end: 2rem;
+  width: 3.5rem;
+}
+
+.task-manager__button:last-child {
+  margin-inline-end: 0;
+}
+
+.task-manager__button--add-edit { background-color: var(--green-color); }
+.task-manager__button--inactive { background-color: var(--yellow-color); }
+.task-manager__button--active { background-color: var(--yellow-color); }
+.task-manager__button--back { background-color: var(--gray-color); }
+.task-manager__button--delete { background-color: var(--red-color); }
+
+.task-manager__icon {
+  color: var(--white-color);
+  display: grid;
+  font-size: 1.5rem;
+  place-items: center;
+}

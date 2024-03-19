@@ -1,0 +1,53 @@
+<div class="task-manager">
+
+  <form class="task-manager__field" [formGroup]="taskForm">
+    <textarea
+      type="text"
+      class="task-manager__textarea input__field"
+      placeholder="Write something"
+      formControlName="name"
+      [ngClass]="{'task-manager__textarea--inactive' : taskStatus.toLowerCase() === 'inactive'}"
+    >
+    </textarea>
+  </form>
+
+  <div class="task-manager__action">
+
+    <!-- back -->
+    <ng-container>
+      <button type="button" class="task-manager__button task-manager__button--back" [routerLink]="['/']">
+        <i class="fa-solid fa-chevron-left task-manager__icon"></i>
+      </button>
+    </ng-container>
+
+    <!-- inactivate task -->
+    <ng-container *ngIf="taskStatus.toLowerCase() === 'active' && taskAction !== 'create'">
+      <button type="button" class="task-manager__button task-manager__button--inactive" (click)="updateTaskStatus()">
+        <i class="fa-solid fa-ban task-manager__icon"></i>
+      </button>
+    </ng-container>
+
+    <!-- activate task -->
+    <ng-container *ngIf="taskStatus === 'inactive' && taskAction != 'create'">
+      <button type="button" class="task-manager__button task-manager__button--active" (click)="updateTaskStatus()">
+        <i class="fa-solid fa-rotate task-manager__icon"></i>
+      </button>
+    </ng-container>
+
+    <!-- delete task -->
+    <ng-container *ngIf="taskAction != 'create'">
+      <button type="button" class="task-manager__button task-manager__button--delete" (click)="deleteTask()">
+        <i class="fa-solid fa-trash task-manager__icon"></i>
+      </button>
+    </ng-container>
+
+    <!-- add | edit task -->
+    <ng-container *ngIf="taskStatus !== 'inactive'">
+      <button type="button" class="task-manager__button task-manager__button--add-edit" (click)="addEditTask()">
+        <i class="fa-solid fa-check task-manager__icon" ></i>
+      </button>
+    </ng-container>
+
+  </div>
+
+</div>

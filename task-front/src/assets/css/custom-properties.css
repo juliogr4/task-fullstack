@@ -1,0 +1,21 @@
+:root {
+  /* ======= COLOR ======= */
+  --blue-color: hsl(216, 88%, 57%);
+  --white-color:hsl(0, 0%, 100%);
+  --light-gray-color: hsl(0, 0%, 44%);
+  --gray-color:hsl(0, 0%, 20%);
+  --red-color:hsl(0, 100%, 63%);
+  --green-color: hsl(116, 51%, 38%);
+  --yellow-color: hsl(58, 84%, 42%);
+
+  /* ======= FONT ======= */
+  --fs-1: 3rem;
+  --fs-4: 1.25rem;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  /* ======= BORDER ======= */
+  --border: 1.5px solid var(--gray-color);
+  --border-warn: 1.5px solid var(--red-color);
+}

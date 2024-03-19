@@ -1,0 +1,18 @@
+<section class="tasks">
+  <app-task-search (search)="onSearch($event)"></app-task-search>
+  <ng-container *ngIf="!isLoading">
+    <app-task-list [tasks]="tasks"></app-task-list>
+    <ng-container *ngIf="tasks.taskItems">
+      <app-pagination
+        [pagination]="tasks.pagination"
+        (selectedPage)="onPageSelected($event)"
+      >
+      </app-pagination>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="isLoading">
+    <div class="loading">
+      <div class="lds-dual-ring"></div>
+    </div>
+  </ng-container>
+</section>

@@ -1,0 +1,22 @@
+<!-- pagination -->
+<ng-container *ngIf="pagination?.hasNextPage || pagination?.hasPreviousPage">
+  <div class="pagination">
+    <button
+      type="button"
+      class="pagination__button pagination__previous"
+      aria-label="go to previous tasks"
+      (click)="onPageSelected('previous')"
+    >
+      <i class="fa-solid fa-circle-chevron-left pagination__icon" [ngClass]="{'pagination__icon--disabled': !pagination?.hasPreviousPage}"></i>
+    </button>
+
+    <button
+      type="button"
+      class="pagination__button pagination__next"
+      aria-label="go to next tasks"
+      (click)="onPageSelected('next')"
+    >
+      <i class="fa-solid fa-circle-chevron-right pagination__icon" [ngClass]="{'pagination__icon--disabled': !pagination?.hasNextPage}"></i>
+    </button>
+  </div>
+</ng-container>
